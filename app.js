@@ -16,7 +16,7 @@ const vonage = new Vonage({
 app.get('/message', (req, res) => {
   var to = req.query.to;
   var from = "Vonage APIs";
-  var text = req.query.text;
+  var text = "Your appointment is successfully booked";
   vonage.message.sendSms(from, to, text, (err, responseData) => {
     if (err) {
         console.log(err);
