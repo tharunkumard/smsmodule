@@ -20,7 +20,7 @@ app.get('/', (req, res) => {
 app.get('/message', (req, res) => {
   var to = req.query.to;
   var from = "Vonage APIs";
-  var text = "Booking Confirmed";
+  var text = "Your appointment is successfully booked";
   vonage.message.sendSms(from, to, text, (err, responseData) => {
     if (err) {
         console.log(err);
