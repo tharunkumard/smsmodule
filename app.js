@@ -13,6 +13,10 @@ const vonage = new Vonage({
     apiSecret: "5G00QbKRsc5Q8Utt"
   })
 
+app.get('/', (req, res) => {
+  res.send("App started")
+}
+)
 app.get('/message', (req, res) => {
   var to = req.query.to;
   var from = "Vonage APIs";
