@@ -8,10 +8,15 @@ app.use(cors());
 const server = app.listen(port, () => console.log(`API Server listening on port ${port}`));
 process.on('SIGINT', () => server.close());
 
+// const vonage = new Vonage({
+//     apiKey: "c970985d",
+//     apiSecret: "5G00QbKRsc5Q8Utt"
+//   })
+
 const vonage = new Vonage({
-    apiKey: "c970985d",
-    apiSecret: "5G00QbKRsc5Q8Utt"
-  })
+  apiKey: "895a7113",
+  apiSecret: "GD08yjIw6bWk3CPQ"
+})
 
 app.get('/', (req, res) => {
   res.send("App started")
