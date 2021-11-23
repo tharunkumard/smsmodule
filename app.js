@@ -23,9 +23,16 @@ app.get('/', (req, res) => {
 }
 )
 app.get('/message', (req, res) => {
+//   var to = req.query.to;
+//   var from = "Vonage APIs";
+//   var text = "Your appointment is successfully booked";
   var to = req.query.to;
   var from = "Vonage APIs";
-  var text = "Your appointment is successfully booked";
+  var docname = req.query.docname;
+  var gmeetid = req.query.gmeetid;
+  var meettime = req.query.meettime;
+  var meetdate = req.query.meetdate;
+  var text = `Your appointment is successfully booked with ` + docname + ` Join the meet link ` + gmeetid + `at the time `+ meettime + ` on `+ meetdate ;
   vonage.message.sendSms(from, to, text, (err, responseData) => {
     if (err) {
         console.log(err);
